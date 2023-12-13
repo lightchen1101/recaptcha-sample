@@ -1,0 +1,206 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Noto Sans TC";
+}
+
+.none {
+  display: none;
+}
+
+:root {
+  --main-bg-color:#f6f6f6;
+  --main-color:#002f94;
+  --main-color-light:#fff;
+  --main-color-dark:#000;
+  --main-font-light:#fff;
+  --main-font-dark:#000;
+  --sub-color:#0d40c3;
+  --sub-color-dark:#4b4b4b;
+  --input-border: #8b8a8b;
+  --input-focus-h: 200;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+  --act-submit:#0d40c3;
+  --act-reset:#f9f9f9;
+}
+
+.input {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  transition: 180ms box-shadow ease-in-out;
+}
+
+.input:focus {
+  border-color: hsl(var(--input-focus-h), var(--input-focus-s), var(--input-focus-l));
+  box-shadow: 0 0 0 3px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) + 40%), 0.8);
+  outline: 3px solid transparent;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  height: 100%;
+  /*overflow: hidden;*/
+  position: relative;
+  -webkit-text-size-adjust: none;
+  background: var(--main-bg-color);
+}
+
+/*header*/
+header {
+  width: 100%;
+  background: #fff;
+  height: 64px;
+  margin: 0;
+}
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 64px;
+}
+header ul li a {
+  color: #000;
+  display: block;
+  text-decoration: none;
+}
+header h1 {
+  display: inline-block;
+  margin: 0 0.5em;
+  line-height: 64px;
+}
+
+.nav-trans {
+  float: right;
+  margin: 0 12px;
+}
+
+.lang-btn {
+  cursor: pointer;
+}
+
+.contwrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.grade-table {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.grade-table th {
+  color: var(--main-font-light);
+}
+
+.grade-table tr {
+  background: var(--main-color-light);
+  color: var(--main-color-dark);
+  height: 82px;
+  font-weight: bold;
+}
+
+.grade-table tr:first-child {
+  background: var(--sub-color);
+}
+
+.arrow-btn {
+  background: url("../images/arrow-down.svg") no-repeat center center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+#grade-tr-collapse {
+  min-height: 82px;
+  height: auto;
+  display: none;
+}
+
+.grade-tips {
+  color: var(--sub-color-dark);
+  text-align: left;
+  display: block;
+  float: right;
+  margin: 0 2em;
+}
+
+.grade-tips span {
+  margin: 0 0.5em;
+  color: var(--sub-color);
+  float: right;
+}
+
+.box-head {
+  background: var(--sub-color);
+  color: var(--main-font-light);
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.box-row {
+  background: var(--main-color-light);
+}
+
+.course-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*驗證碼tag custom
+.grecaptcha-badge {
+    right: auto !important;
+    left: 0;
+    width: 70px !important;
+
+    -webkit-transition: width 0.5s ease-in-out !important;
+    -moz-transition: width 0.5s ease-in-out !important;
+    -o-transition: width 0.5s ease-in-out !important;
+    transition: width 0.5s ease-in-out !important;
+
+    &:hover {
+        width: 256px !important;
+    }
+ }*/
+.common-submit-btn, .act-submit {
+  padding: 10px;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 30%;
+  margin: 1em;
+  cursor: pointer;
+}
+
+.act-submit {
+  color: #fff;
+  background-color: var(--act-submit);
+}
+
+@media (max-width: 767px) {
+  header h1 {
+    display: inline-block;
+    margin: 0 0.5em;
+    line-height: 64px;
+    font-size: 1em;
+  }
+  .lang-btn {
+    font-size: 1em;
+  }
+}/*# sourceMappingURL=main.css.map */
