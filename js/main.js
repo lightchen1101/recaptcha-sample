@@ -6,29 +6,6 @@ if ($(location).attr('pathname').match(/[^\/]+$/) != null) {
         //console.log(pagename);
     }
 }
-if (pagename == 'index.html') {
-  //v2
-  var onloadCallback = function() {
-
-    grecaptcha.render('recaptcha-cont', {
-      'sitekey': '6LcBgyYpAAAAALC2J27GwPyuxkGSrHcFacADVsNF',//v2 key
-      'theme': 'light',
-      'size': 'normal',
-      'callback': verifyCallback,//通過
-      'expired-callback': regetverify //驗證碼過期
-      //'error-callback': //失敗
-    });
-  
-    function verifyCallback(token) {
-      //
-    }
-    function regetverify() {
-      grecaptcha.reset();
-    }
-  
-  }
-  onloadCallback();
-}
 if (pagename == 'recapchat-v3.html') {
 
   var verifyapi = 'https://script.google.com/macros/s/AKfycbx4umcKoyI4Cl5zMcjWmuz0agyW54Oneg08hekLSEHZSsK7ud7HbnHIR0fZtmi6SWGz/exec';
