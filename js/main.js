@@ -11,11 +11,11 @@ if (pagename == 'index.html') {
   var onloadCallback = function() {
 
     grecaptcha.render('recaptcha-cont', {
-      'sitekey': '6LcBgyYpAAAAALC2J27GwPyuxkGSrHcFacADVsNF',
+      'sitekey': '6LcBgyYpAAAAALC2J27GwPyuxkGSrHcFacADVsNF',//v2 key
       'theme': 'light',
       'size': 'normal',
       'callback': verifyCallback,//通過
-      'expired-callback': regetverify //驗證碼過期,官方預設2min
+      'expired-callback': regetverify //驗證碼過期
       //'error-callback': //失敗
     });
   
@@ -39,7 +39,7 @@ if (pagename == 'recapchat-v3.html') {
     $("h4").html("分數驗證中...");
     grecaptcha
           .ready(() => {
-            grecaptcha.execute('6Lc7oy4pAAAAAChfeBuUr1b7GUT_KTsPyQSgPETE', {
+            grecaptcha.execute('6Lc7oy4pAAAAAChfeBuUr1b7GUT_KTsPyQSgPETE', {//v3 key
               action: 'verify2'
             }).then(token => { //驗證後產生的token
               verifyCallback(token)
