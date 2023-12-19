@@ -192,6 +192,14 @@ header h1 {
   color: #fff;
   background-color: var(--act-submit);
 }
+.act-submit:disabled {
+  background: var(--input-border);
+  cursor: default;
+}
+
+.form-text {
+  display: block;
+}
 
 @media (max-width: 767px) {
   header h1 {

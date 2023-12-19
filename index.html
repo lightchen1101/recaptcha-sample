@@ -5,30 +5,6 @@
 	<meta charset="utf-8">
 	<title>reCAPTCHA</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<script>
-  //v2
-  var onloadCallback = function() {
-
-    grecaptcha.render('recaptcha-cont', {
-      'sitekey': '6LcBgyYpAAAAALC2J27GwPyuxkGSrHcFacADVsNF',//v2 key
-      'theme': 'light',
-      'size': 'normal',
-      'callback': verifyCallback,//通過
-      'expired-callback': regetverify //驗證碼過期
-      //'error-callback': //失敗
-    });
-  
-    function verifyCallback(token) {
-      //
-    }
-    function regetverify() {
-      grecaptcha.reset();
-    }
-  
-  }
-  onloadCallback();
-
-	</script>
 </head>
 
 <body>
@@ -40,11 +16,12 @@
 	<h2>v2驗證碼，某些狀況下還是會有圖形辨識</h2>
 	<div id="recaptcha-cont" class="g-recaptcha"></div>
 	<form method="POST">
-		<input type="submit" value="送出" class="act-submit">
+		<label class="form-text"></label>
+		<input type="submit" value="送出" class="act-submit" disabled>
 	</form>
 
 </section>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="js/libs/jquery-3.7.0.min.js"></script>
 	<script src="js/libs/axios.min.js"></script><!--api lib-->
 	<script type="text/javascript" src="js/main.js"></script>

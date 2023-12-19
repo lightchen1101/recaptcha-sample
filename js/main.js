@@ -6,6 +6,33 @@ if ($(location).attr('pathname').match(/[^\/]+$/) != null) {
         //console.log(pagename);
     }
 }
+if (pagename == 'index.html') {
+  //v2
+  var onloadCallback = function() {
+
+    grecaptcha.render('recaptcha-cont', {
+      'sitekey': '6LcBgyYpAAAAALC2J27GwPyuxkGSrHcFacADVsNF',
+      'theme': 'light',
+      'size': 'normal',
+      'callback': verifyCallback,//通過
+      'expired-callback': regetverify //驗證碼過期,官方預設2min
+      //'error-callback': //失敗
+    });
+  
+    function verifyCallback(token) {
+      $(".act-submit").removeAttr('disabled');
+      $(".act-submit").on("click",function(e){
+        $("label").append("送表單啦")
+        return false;
+      })
+    }
+    function regetverify() {
+      grecaptcha.reset();
+    }
+  
+  }
+  onloadCallback();
+}
 if (pagename == 'recapchat-v3.html') {
 
   var verifyapi = 'https://script.google.com/macros/s/AKfycbx4umcKoyI4Cl5zMcjWmuz0agyW54Oneg08hekLSEHZSsK7ud7HbnHIR0fZtmi6SWGz/exec';
@@ -16,7 +43,7 @@ if (pagename == 'recapchat-v3.html') {
     $("h4").html("分數驗證中...");
     grecaptcha
           .ready(() => {
-            grecaptcha.execute('6Lc7oy4pAAAAAChfeBuUr1b7GUT_KTsPyQSgPETE', {//v3 key
+            grecaptcha.execute('6Lc7oy4pAAAAAChfeBuUr1b7GUT_KTsPyQSgPETE', {
               action: 'verify2'
             }).then(token => { //驗證後產生的token
               verifyCallback(token)

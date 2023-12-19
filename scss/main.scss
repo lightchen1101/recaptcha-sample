@@ -191,6 +191,13 @@ header {
     @extend .common-submit-btn;
     color: #fff;
     background-color:var(--act-submit);
+    &:disabled{
+        background:var(--input-border);
+        cursor: default;
+    }
+  }
+  .form-text{
+    display: block;
   }
 
 @media(max-width: 767px) {
