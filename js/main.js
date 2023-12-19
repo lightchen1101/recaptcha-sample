@@ -6,7 +6,7 @@ if ($(location).attr('pathname').match(/[^\/]+$/) != null) {
         //console.log(pagename);
     }
 }
-if (pagename == 'index.html') {
+if (pagename == 'index.html' || pagename == '') {
   //v2
   var onloadCallback = function() {
 
